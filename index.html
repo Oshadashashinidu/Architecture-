@@ -280,13 +280,14 @@
           <path class="base-link" d="M220 520 L440 520"/><path class="base-link" d="M440 189 L440 520"/>
           <path class="base-link" d="M440 189 L660 354"/><path class="base-link" d="M440 520 L660 354"/>
           <path class="base-link" d="M660 354 L835 189"/><path class="base-link" d="M660 354 L835 520"/>
-          <path class="base-link" d="M835 520 L835 615 L220 615 L220 520"/>
+          <path class="base-link" d="M660 354 L220 520"/>
           <path class="active-link" data-link="sensors-esp32" d="M220 189 L220 520"/><path class="active-link" data-link="esp32-browser" d="M220 520 L440 189"/>
           <path class="active-link" data-link="esp32-hivemq" d="M220 520 L440 520"/><path class="active-link" data-link="browser-hivemq" d="M434 189 L434 520"/>
           <path class="active-link" data-link="hivemq-browser" d="M446 520 L446 189"/>
           <path class="active-link" data-link="browser-ec2" d="M440 189 L660 354"/><path class="active-link" data-link="hivemq-ec2" d="M440 520 L660 354"/>
           <path class="active-link" data-link="ec2-mongodb" d="M660 354 L835 189"/><path class="active-link" data-link="ec2-supabase" d="M660 354 L835 520"/>
-          <path class="active-link" data-link="supabase-esp32" d="M835 520 L835 615 L220 615 L220 520"/>
+          <path class="active-link" data-link="supabase-ec2" d="M835 520 L660 354"/>
+          <path class="active-link" data-link="ec2-esp32" d="M660 354 L220 520"/>
           <path class="active-link" data-link="esp32-encoder" d="M220 520 L220 189"/>
           <path class="signal-packet" data-packet="sensors-esp32" d="M-6-4 6 0-6 4Z"><animateMotion dur="1.7s" repeatCount="indefinite" rotate="auto" path="M220 189 L220 520"/></path>
           <path class="signal-packet" data-packet="esp32-browser" d="M-6-4 6 0-6 4Z"><animateMotion dur="1.7s" repeatCount="indefinite" rotate="auto" path="M220 520 L440 189"/></path>
@@ -297,7 +298,8 @@
           <path class="signal-packet" data-packet="hivemq-ec2" d="M-6-4 6 0-6 4Z"><animateMotion dur="1.7s" repeatCount="indefinite" rotate="auto" path="M440 520 L660 354"/></path>
           <path class="signal-packet" data-packet="ec2-mongodb" d="M-6-4 6 0-6 4Z"><animateMotion dur="1.7s" repeatCount="indefinite" rotate="auto" path="M660 354 L835 189"/></path>
           <path class="signal-packet" data-packet="ec2-supabase" d="M-6-4 6 0-6 4Z"><animateMotion dur="1.7s" repeatCount="indefinite" rotate="auto" path="M660 354 L835 520"/></path>
-          <path class="signal-packet" data-packet="supabase-esp32" d="M-6-4 6 0-6 4Z"><animateMotion dur="2.7s" repeatCount="indefinite" rotate="auto" path="M835 520 L835 615 L220 615 L220 520"/></path>
+          <path class="signal-packet" data-packet="supabase-ec2" d="M-6-4 6 0-6 4Z"><animateMotion dur="1.7s" repeatCount="indefinite" rotate="auto" path="M835 520 L660 354"/></path>
+          <path class="signal-packet" data-packet="ec2-esp32" d="M-6-4 6 0-6 4Z"><animateMotion dur="2.2s" repeatCount="indefinite" rotate="auto" path="M660 354 L220 520"/></path>
           <path class="signal-packet" data-packet="esp32-encoder" d="M-6-4 6 0-6 4Z"><animateMotion dur="1.7s" repeatCount="indefinite" rotate="auto" path="M220 520 L220 189"/></path>
         </svg>
 
@@ -317,7 +319,7 @@
       calibration: { name: 'Calibration Flow', color: '#35bafa', rgb: '53,186,250', nodes: ['sensors','esp32','browser','ec2','mongodb'], links: ['sensors-esp32','esp32-browser','browser-ec2','ec2-mongodb'] },
       telemetry: { name: 'Real-Time Telemetry', color: '#35df87', rgb: '53,223,135', nodes: ['sensors','esp32','browser','hivemq'], links: ['sensors-esp32','esp32-browser','browser-hivemq','hivemq-browser'] },
       tracking: { name: 'Session Tracking', color: '#c66cff', rgb: '198,108,255', nodes: ['sensors','esp32','browser','ec2','mongodb','supabase'], links: ['sensors-esp32','esp32-browser','browser-ec2','ec2-mongodb','ec2-supabase'] },
-      force: { name: 'Force Feedback', color: '#ff893f', rgb: '255,137,63', nodes: ['supabase','esp32','sensors'], links: ['supabase-esp32','esp32-encoder'] }
+      force: { name: 'Force Feedback', color: '#ff893f', rgb: '255,137,63', nodes: ['browser','ec2','supabase','esp32','sensors'], links: ['browser-ec2','ec2-supabase','supabase-ec2','ec2-esp32','esp32-encoder'] }
     };
 
     const buttons = [...document.querySelectorAll('.flow-button')];
